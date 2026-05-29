@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Путь к сердцу — Кирильчук Софья</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0E0E0B;
+  --gold:#B99A45;
+  --gold-soft:#D5BC76;
+  --milk:#F7F3EA;
+  --text:#ECE7DD;
+  --muted:#8B8478;
+  --line:rgba(185,154,69,.18);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1180px, calc(100% - 48px));
+  margin:0 auto;
+}
+
+.section{
+  padding:120px 0;
+  position:relative;
+}
+
+.eyebrow{
+  color:var(--gold-soft);
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:10px;
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.eyebrow::before{
+  content:'';
+  width:32px;
+  height:1px;
+  background:var(--gold);
+}
+
+h1,h2,h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+}
+
+.title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(56px,9vw,112px);
+  line-height:.92;
+  font-weight:300;
+  color:#F7F3EA;
+}
+
+.title em{
+  font-style:italic;
+  color:var(--gold-soft);
+}
+
+.section-title{
+  font-size:clamp(36px,5vw,64px);
+  line-height:1.05;
+  margin-bottom:30px;
+}
+
+.section-title em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.text{
+  color:#C9C2B6;
+  line-height:2;
+  font-size:15px;
+}
+
+.topline{
+  border-bottom:1px solid var(--line);
+  padding:14px 0;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(10px);
+  background:rgba(14,14,11,.55);
+}
+
+.topline-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.topline small{
+  color:var(--gold-soft);
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:10px;
+  line-height:1.5;
+  text-align:center;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  min-height:100dvh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-start;
+  background:#0E0E0B;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+.hero-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:
+    brightness(.38)
+    contrast(1.05)
+    saturate(.9);
+  transform:scale(1.02);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.68)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(185,154,69,.12),
+      transparent 35%
+    );
+}
+
+.hero .container{
+  position:relative;
+  z-index:5;
+}
+
+.hero-body{
+  width:100%;
+  max-width:780px;
+  padding:132px 0 96px;
+  text-align:left;
+}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  padding:10px 18px;
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);
+  color:#D5BC76;
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:10px;
+  line-height:1.65;
+  margin-bottom:38px;
+  max-width:100%;
+}
+
+.hero-sub{
+  margin-top:28px;
+  color:#A8A092;
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-size:11px;
+  line-height:1.7;
+  max-width:520px;
+}
+
+.hero-quote{
+  margin-top:44px;
+  max-width:680px;
+  font-family:'Inter',sans-serif;
+  font-size:clamp(13px,1.35vw,15px);
+  line-height:1.8;
+  font-style:normal;
+  font-weight:300;
+  color:#9E9789;
+  letter-spacing:.01em;
+  text-align:left;
+  text-wrap:pretty;
+}
+
+.hero-quote-lead{
+  display:block;
+  margin-bottom:10px;
+  color:#B8B0A3;
+}
+
+.dog-outline{
+  position:absolute;
+  right:-100px;
+  bottom:-60px;
+  width:650px;
+  opacity:.05;
+  z-index:3;
+}
+
+.paw{
+  position:absolute;
+  z-index:3;
+  font-size:42px;
+  opacity:.08;
+  user-select:none;
+}
+
+.paw1{
+  left:5%;
+  bottom:12%;
+  transform:rotate(-12deg);
+}
+
+.paw2{
+  right:8%;
+  top:22%;
+  transform:rotate(18deg);
+}
+
+.divider{
+  height:1px;
+  background:var(--line);
+  margin:80px 0;
+}
+
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  margin-top:70px;
+  align-items:center;
+}
+
+.story-photo{
+  position:relative;
+  overflow:hidden;
+}
+
+.story-photo::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(185,154,69,.25);
+  transform:translate(16px, 16px);
+  z-index:0;
+  pointer-events:none;
+}
+
+.story-photo img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(.92) contrast(1.02);
+}
+
+.story-photo-caption{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.quote-banner{
+  background:#141411;
+  padding:120px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.quote-banner::before{
+  content:'❝';
+  position:absolute;
+  left:50%;
+  top:-60px;
+  transform:translateX(-50%);
+  font-size:340px;
+  color:rgba(185,154,69,.05);
+  font-family:'Cormorant Garamond',serif;
+}
+
+.quote-big{
+  max-width:980px;
+  margin:0 auto;
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(30px,4vw,54px);
+  line-height:1.45;
+  font-style:italic;
+  position:relative;
+  z-index:2;
+}
+
+.quote-big strong{
+  color:var(--gold-soft);
+  font-style:normal;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:70px;
+}
+
+.stat{
+  padding:40px;
+  background:#11110D;
+}
+
+.stat-number{
+  font-size:64px;
+  color:var(--gold-soft);
+  font-family:'Cormorant Garamond',serif;
+  margin-bottom:12px;
+}
+
+.stat-text{
+  color:#A89F91;
+  line-height:1.8;
+  font-size:13px;
+}
+
+.growth-section{
+  overflow:hidden;
+}
+
+.growth-lead{
+  margin-top:18px;
+  max-width:560px;
+  color:#9E9789;
+  font-size:14px;
+  line-height:1.8;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.growth-metrics{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:56px;
+}
+
+.metric{
+  background:#11110D;
+  padding:34px 28px 30px;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+
+.metric-number{
+  font-size:clamp(44px,4vw,58px);
+  color:var(--gold-soft);
+  font-family:'Cormorant Garamond',serif;
+  line-height:1;
+}
+
+.metric-chart{
+  height:3px;
+  background:rgba(185,154,69,.14);
+  border-radius:999px;
+  margin:18px 0 20px;
+  overflow:hidden;
+}
+
+.metric-chart span{
+  display:block;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--gold), var(--gold-soft));
+}
+
+.metric-dots{
+  display:flex;
+  gap:5px;
+  margin:16px 0 18px;
+  min-height:10px;
+  align-items:center;
+}
+
+.metric-dots i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:rgba(185,154,69,.18);
+  flex-shrink:0;
+}
+
+.metric-dots i.on{
+  background:var(--gold-soft);
+  box-shadow:0 0 10px rgba(213,188,118,.25);
+}
+
+.metric-text{
+  color:#A89F91;
+  line-height:1.75;
+  font-size:12.5px;
+  margin-top:auto;
+}
+
+.metric--wide .metric-text{
+  font-size:12px;
+  line-height:1.7;
+}
+
+.growth-bridge{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin:64px 0 0;
+  color:#7A746A;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+}
+
+.growth-bridge::before,
+.growth-bridge::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  margin-top:32px;
+}
+
+.card{
+  background:#131310;
+  padding:42px;
+}
+
+.card-number{
+  font-size:78px;
+  font-family:'Cormorant Garamond',serif;
+  color:rgba(185,154,69,.18);
+  margin-bottom:18px;
+}
+
+.card-title{
+  font-size:28px;
+  margin-bottom:18px;
+}
+
+.card-text{
+  color:#BEB6A8;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.impact{
+  background:var(--milk);
+  color:#111;
+}
+
+.impact .text{
+  color:#49433A;
+}
+
+.impact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+  margin-top:70px;
+}
+
+.impact-item{
+  border:1px solid rgba(0,0,0,.08);
+  padding:32px;
+  background:white;
+}
+
+.impact-item h3{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.impact-item p{
+  color:#5B5347;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.fullscreen-quote{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.fullscreen-quote-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.fullscreen-quote-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(.45) contrast(1.05);
+  transform:scale(1.03);
+}
+
+.fullscreen-quote-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.72)),
+    radial-gradient(circle at center, transparent 30%, rgba(0,0,0,.35) 100%);
+}
+
+.fullscreen-quote-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:40px;
+}
+
+.fullscreen-quote h2{
+  font-size:clamp(34px,5vw,72px);
+  line-height:1.2;
+  font-style:italic;
+}
+
+.fullscreen-quote h2 em{
+  color:var(--gold-soft);
+}
+
+.portrait-section{
+  padding:0;
+  overflow:hidden;
+}
+
+.portrait-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  min-height:560px;
+}
+
+.portrait-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.portrait-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  min-height:560px;
+}
+
+.portrait-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:80px 72px;
+  background:#141411;
+}
+
+.portrait-content .section-title{
+  margin-bottom:24px;
+}
+
+.footer{
+  padding:70px 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+
+.footer-logo{
+  font-size:40px;
+  margin-bottom:12px;
+}
+
+.footer small{
+  color:#8B8478;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  font-size:10px;
+}
+
+@media(max-width:980px){
+
+.stats,
+.growth-metrics{
+  grid-template-columns:1fr 1fr;
+}
+
+.cards{
+  grid-template-columns:1fr;
+}
+
+.story-grid{
+  grid-template-columns:1fr;
+  gap:40px;
+}
+
+.story-photo{
+  order:-1;
+}
+
+.impact-grid{
+  grid-template-columns:1fr;
+}
+
+.portrait-grid{
+  grid-template-columns:1fr;
+}
+
+.portrait-content{
+  padding:60px 24px;
+}
+
+.portrait-image img{
+  min-height:420px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-body{
+  padding:112px 0 72px;
+}
+
+.hero-bg img{
+  object-position:60% center;
+}
+
+.hero-tag{
+  letter-spacing:.16em;
+  font-size:9px;
+  padding:10px 14px;
+}
+
+.hero-sub{
+  letter-spacing:.18em;
+  font-size:10px;
+}
+
+.topline small{
+  letter-spacing:.14em;
+  font-size:8px;
+}
+
+.title{
+  font-size:clamp(52px,14vw,72px);
+}
+
+.hero-quote{
+  font-size:13px;
+  margin-top:36px;
+  max-width:100%;
+}
+
+}
+
+@media(max-width:680px){
+
+.section{
+  padding:90px 0;
+}
+
+.stats,
+.growth-metrics{
+  grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header class="topline">
+  <div class="container topline-inner">
+    <small>Forbes Woman Mercury Awards</small>
+    <small>Кирильчук Софья · 2026</small>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+  <svg class="dog-outline" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M142 534C181 442 272 354 389 344C495 335 576 384 639 470" stroke="#D5BC76" stroke-width="4"/>
+    <path d="M262 547C259 598 276 662 308 692" stroke="#D5BC76" stroke-width="4"/>
+    <path d="M485 551C489 610 511 668 547 700" stroke="#D5BC76" stroke-width="4"/>
+  </svg>
+
+  <div class="hero-bg">
+    <img src="./IMG_9926.WEBP" alt="Кирильчук Софья">
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+    <div class="hero-body">
+
+    <div class="hero-tag">
+      Forbes Woman Mercury Awards · Social Impact Project
+    </div>
+
+    <h1 class="title">
+      Путь<br>
+      к <em>сердцу</em>
+    </h1>
+
+    <div class="hero-sub">
+      Проект, изменивший культуру гостеприимства
+    </div>
+
+    <div class="hero-quote">
+      <span class="hero-quote-lead">
+        Заявление о смелости переосмыслить стандарты заботы и превратить их в новую норму индустрии —
+      </span>
+      от локального принятия внутри сообщества до международного вектора развития пет-культуры группы компаний, сформировавшего устойчивый стандарт и заново определившего саму природу гостевого опыта.
+    </div>
+
+    </div>
+  </div>
+
+  <div class="paw paw1">🐾</div>
+  <div class="paw paw2">🐾</div>
+
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="eyebrow">Как рождаются изменения</div>
+
+    <h2 class="section-title">
+      Иногда большие перемены начинаются<br>
+      <em>с одной спасённой собаки</em>
+    </h2>
+
+    <div class="story-grid">
+
+      <div class="story-photo">
+        <img src="./DSC08303.JPG" alt="Софья с питомцем в пет-френдли пространстве">
+        <div class="story-photo-caption">Пет-френдли среда — новая норма</div>
+      </div>
+
+      <div>
+        <div class="text">
+          Всё началось с Вари — собаки из приюта, появившейся в моей жизни в момент, когда я переживала потерю первого питомца.
+
+          <br><br>
+
+          Тогда я особенно остро почувствовала, насколько людям важно не расставаться с теми, кого они любят.
+
+          <br><br>
+
+          Именно тогда появилась идея пространства, где человек может быть рядом со своим питомцем без ограничений, осуждения и необходимости выбирать между повседневной жизнью и заботой о своём друге.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="text">
+          Проект родился практически с нуля.
+
+          <br><br>
+
+          Без больших бюджетов. Только благодаря вере, инициативе и команде людей, которых мне удалось объединить вокруг этой идеи.
+
+          <br><br>
+
+          Вместе мы создали инициативу, которая позже стала международной практикой для объектов сети МЕГА (ex Ingka Centres, ныне Газпромбанк).
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="quote-banner">
+
+  <div class="container">
+
+    <div class="quote-big">
+      «Когда ты создаёшь не просто проект,
+      а новое отношение людей друг к другу —
+      <strong>работа перестаёт быть просто работой.</strong>»
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section growth-section">
+
+  <div class="container">
+
+    <div class="eyebrow">Влияние и признание</div>
+
+    <h2 class="section-title">
+      Во что выросла<br>
+      <em>одна идея</em>
+    </h2>
+
+    <p class="growth-lead">Из сервиса — в новую норму индустрии</p>
+
+    <div class="growth-metrics">
+
+      <div class="metric">
+        <div class="metric-number">46</div>
+        <div class="metric-chart"><span style="width:92%"></span></div>
+        <div class="metric-text">
+          Международных объектов участвовали в конкурсе на лучший реализованный проект
+        </div>
+      </div>
+
+      <div class="metric metric--wide">
+        <div class="metric-number">13</div>
+        <div class="metric-dots" aria-hidden="true">
+          <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+          <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+          <i class="on"></i><i class="on"></i><i class="on"></i>
+        </div>
+        <div class="metric-text">
+          1 год работы. 1 документ. 13 стран. И пет-френдли среда, созданная с нуля на международном уровне
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-number">6+</div>
+        <div class="metric-chart"><span style="width:58%"></span></div>
+        <div class="metric-text">
+          Стран уже внедряют и адаптируют пет-френдли практики
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-number">5+</div>
+        <div class="metric-chart"><span style="width:42%"></span></div>
+        <div class="metric-text">
+          Объектов в России внедрили сервисы и стандарты проекта к 2026 году
+        </div>
+      </div>
+
+      <div class="metric">
+        <div class="metric-number">210K</div>
+        <div class="metric-chart"><span style="width:78%"></span></div>
+        <div class="metric-text">
+          Кв.м — масштаб первого пилотного объекта, где стартовал проект
+        </div>
+      </div>
+
+    </div>
+
+    <div class="growth-bridge">Три измерения трансформации</div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-number">01</div>
+        <div class="card-title">
+          Новая культура гостеприимства
+        </div>
+        <div class="card-text">
+          Инициатива изменила восприятие открытых пространств для людей с питомцами и стала частью современной городской культуры.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-number">02</div>
+        <div class="card-title">
+          Социальная значимость
+        </div>
+        <div class="card-text">
+          Приюты и благотворительные организации получили возможность участвовать в мероприятиях, находить дом животным и становиться частью жизни торговых центров.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-number">03</div>
+        <div class="card-title">
+          Международное наследие
+        </div>
+        <div class="card-text">
+          Стандарты проекта передаются командам по всему миру и продолжают эволюционировать уже без моего прямого участия внутри компании.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="fullscreen-quote">
+
+  <div class="fullscreen-quote-bg">
+    <img src="./IMG_B5BB266234E1-1.jpeg" alt="Кирильчук Софья на мероприятии">
+  </div>
+
+  <div class="fullscreen-quote-overlay"></div>
+
+  <div class="fullscreen-quote-content">
+    <h2>
+      «Любовь к животным<br>
+      <em>не должна заканчиваться</em><br>
+      у входа в торговый центр.»
+    </h2>
+  </div>
+
+</section>
+
+<section class="impact section">
+
+  <div class="container">
+
+    <div class="eyebrow">Архитектура проекта</div>
+
+    <h2 class="section-title">
+      Система,<br>
+      <em>которая масштабируется</em>
+    </h2>
+
+    <div class="impact-grid">
+
+      <div class="impact-item">
+        <h3>Юридическая база</h3>
+        <p>
+          Создание нормативной и сервисной системы допуска питомцев в торговые пространства.
+        </p>
+      </div>
+
+      <div class="impact-item">
+        <h3>Навигация и сервис</h3>
+        <p>
+          Полная адаптация пространства для комфортного пребывания гостей с питомцами.
+        </p>
+      </div>
+
+      <div class="impact-item">
+        <h3>Обучение команд</h3>
+        <p>
+          Разработка тренингов и стандартов работы персонала внутри пет-френдли среды.
+        </p>
+      </div>
+
+      <div class="impact-item">
+        <h3>Партнёрства</h3>
+        <p>
+          Коллаборации с брендами, фондами, приютами и запуск первого масштабного дог-френдли меню.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="portrait-section">
+
+  <div class="portrait-grid">
+
+    <div class="portrait-image">
+      <img src="./IMG_9926.WEBP" alt="Кирильчук Софья — Forbes Woman Mercury Awards">
+    </div>
+
+    <div class="portrait-content">
+      <div class="eyebrow">Наследие проекта</div>
+
+      <h2 class="section-title">
+        Настоящие идеи<br>
+        <em>не имеют срока годности</em>
+      </h2>
+
+      <div class="text">
+        Сегодня проект продолжает жить и развиваться уже без моего прямого участия.
+
+        <br><br>
+
+        Новые объекты адаптируют стандарты, команды развивают пет-френдли направление, а сама инициатива становится частью долгосрочной стратегии современного гостеприимства.
+
+        <br><br>
+
+        Для меня это главный показатель настоящего проекта:
+        он продолжает менять среду даже тогда, когда тебя уже нет внутри компании.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="quote-big" style="font-size:42px">
+      «Идея обретает форму, когда за ней стоит человек,
+      готовый её реализовать — и женщины-управленцы,
+      которые поверили и поддержали.
+      <strong>Так меняется культура целой индустрии.</strong>»
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="footer-logo">
+    Путь к сердцу
+  </div>
+
+  <small>
+    Кирильчук Софья · Forbes Woman Mercury Awards · 2026
+  </small>
+
+</footer>
+
+</body>
+</html>
