@@ -407,6 +407,10 @@ h1,h2,h3{
   font-style:normal;
 }
 
+.quote-big--final{
+  font-size:clamp(30px,3.2vw,42px);
+}
+
 .stats{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -900,6 +904,12 @@ h1,h2,h3{
   max-width:100%;
 }
 
+.quote-big--final{
+  font-size:clamp(20px,5.2vw,26px);
+  line-height:1.55;
+  padding:0 4px;
+}
+
 }
 
 @media(max-width:680px){
@@ -1284,7 +1294,7 @@ h1,h2,h3{
 
   <div class="container">
 
-    <div class="quote-big" style="font-size:42px">
+    <div class="quote-big quote-big--final">
       «Идея обретает форму, когда находит своих людей.
       Мне повезло встретить таких людей на своём пути,
       и я благодарна им за доверие и поддержку.»
