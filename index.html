@@ -156,7 +156,7 @@ h1,h2,h3{
   object-fit:cover;
   object-position:center top;
   filter:
-    brightness(.38)
+    brightness(.52)
     contrast(1.05)
     saturate(.9);
   transform:scale(1.02);
@@ -1161,18 +1161,27 @@ h1,h2,h3{
   function playHeroVideo() {
     var promise = video.play();
     if (promise && typeof promise.catch === 'function') {
-      promise.catch(showFallback);
+      promise.catch(function () {});
     }
   }
 
+  function onVideoReady() {
+    video.removeAttribute('poster');
+    playHeroVideo();
+  }
+
   video.addEventListener('error', showFallback);
-  video.addEventListener('loadeddata', playHeroVideo);
-  video.addEventListener('canplay', playHeroVideo);
+  video.addEventListener('loadeddata', onVideoReady);
+  video.addEventListener('canplay', onVideoReady);
+  video.addEventListener('playing', function () {
+    if (fallback) fallback.hidden = true;
+  });
 
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) playHeroVideo();
   });
 
+  video.load();
   playHeroVideo();
 })();
 </script>
