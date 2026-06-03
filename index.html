@@ -149,6 +149,7 @@ h1,h2,h3{
 }
 
 .hero-bg video{
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -787,7 +788,9 @@ h1,h2,h3{
   </svg>
 
   <div class="hero-bg">
-    <video src="./paws.mp4" autoplay loop muted playsinline aria-label="Кирильчук Софья"></video>
+    <video id="hero-video" poster="./IMG_9926.WEBP" autoplay loop muted playsinline preload="auto" aria-label="Кирильчук Софья">
+      <source src="/paws.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="hero-overlay"></div>
@@ -1117,6 +1120,28 @@ h1,h2,h3{
   </small>
 
 </footer>
+
+<script>
+(function () {
+  var video = document.getElementById('hero-video');
+  if (!video) return;
+
+  video.muted = true;
+
+  function playHeroVideo() {
+    var promise = video.play();
+    if (promise && typeof promise.catch === 'function') {
+      promise.catch(function () {});
+    }
+  }
+
+  playHeroVideo();
+  video.addEventListener('loadeddata', playHeroVideo);
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) playHeroVideo();
+  });
+})();
+</script>
 
 </body>
 </html>
