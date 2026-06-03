@@ -411,6 +411,10 @@ h1,h2,h3{
   font-size:clamp(30px,3.2vw,42px);
 }
 
+.quote-final-block{
+  position:relative;
+}
+
 .stats{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -910,6 +914,33 @@ h1,h2,h3{
   padding:0 4px;
 }
 
+.quote-final-block{
+  margin:0 -24px;
+  padding:20px 20px 28px;
+  min-height:min(78vh,560px);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(14,14,11,.94) 0%,
+      rgba(14,14,11,.72) 24%,
+      rgba(14,14,11,.42) 48%,
+      rgba(14,14,11,.18) 72%
+    ),
+    url('./sophiakirilchuk.JPG');
+  background-size:cover;
+  background-position:34% 42%;
+  background-repeat:no-repeat;
+}
+
+.quote-final-block .quote-big--final{
+  position:relative;
+  z-index:2;
+  padding-bottom:min(46vw,200px);
+  text-shadow:
+    0 2px 20px rgba(0,0,0,.85),
+    0 0 40px rgba(14,14,11,.8);
+}
+
 }
 
 @media(max-width:680px){
@@ -1294,10 +1325,12 @@ h1,h2,h3{
 
   <div class="container">
 
-    <div class="quote-big quote-big--final">
-      «Идея обретает форму, когда находит своих людей.
-      Мне повезло встретить таких людей на своём пути,
-      и я благодарна им за доверие и поддержку.»
+    <div class="quote-final-block">
+      <div class="quote-big quote-big--final">
+        «Идея обретает форму, когда находит своих людей.
+        Мне повезло встретить таких людей на своём пути,
+        и я благодарна им за доверие и поддержку.»
+      </div>
     </div>
 
   </div>
