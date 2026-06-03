@@ -148,7 +148,8 @@ h1,h2,h3{
   z-index:1;
 }
 
-.hero-bg video{
+.hero-bg video,
+.hero-bg #hero-fallback{
   display:block;
   width:100%;
   height:100%;
@@ -159,6 +160,15 @@ h1,h2,h3{
     contrast(1.05)
     saturate(.9);
   transform:scale(1.02);
+}
+
+.hero-bg #hero-fallback{
+  position:absolute;
+  inset:0;
+}
+
+.hero-bg #hero-fallback[hidden]{
+  display:none;
 }
 
 .hero-overlay{
@@ -723,7 +733,8 @@ h1,h2,h3{
   padding:112px 0 72px;
 }
 
-.hero-bg video{
+.hero-bg video,
+.hero-bg #hero-fallback{
   object-position:60% center;
 }
 
@@ -788,9 +799,18 @@ h1,h2,h3{
   </svg>
 
   <div class="hero-bg">
-    <video id="hero-video" poster="./IMG_9926.WEBP" autoplay loop muted playsinline preload="auto" aria-label="Кирильчук Софья">
-      <source src="./paws.mp4" type="video/mp4">
-    </video>
+    <video
+      id="hero-video"
+      src="paws.mp4"
+      poster="IMG_9926.WEBP"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      aria-label="Кирильчук Софья"
+    ></video>
+    <img id="hero-fallback" src="IMG_9926.WEBP" alt="Кирильчук Софья" hidden>
   </div>
 
   <div class="hero-overlay"></div>
@@ -1124,22 +1144,36 @@ h1,h2,h3{
 <script>
 (function () {
   var video = document.getElementById('hero-video');
+  var fallback = document.getElementById('hero-fallback');
   if (!video) return;
 
   video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('muted', '');
+  video.src = new URL('paws.mp4', window.location.href).href;
+
+  function showFallback() {
+    if (!fallback) return;
+    video.style.display = 'none';
+    fallback.hidden = false;
+  }
 
   function playHeroVideo() {
     var promise = video.play();
     if (promise && typeof promise.catch === 'function') {
-      promise.catch(function () {});
+      promise.catch(showFallback);
     }
   }
 
-  playHeroVideo();
+  video.addEventListener('error', showFallback);
   video.addEventListener('loadeddata', playHeroVideo);
+  video.addEventListener('canplay', playHeroVideo);
+
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) playHeroVideo();
   });
+
+  playHeroVideo();
 })();
 </script>
 
